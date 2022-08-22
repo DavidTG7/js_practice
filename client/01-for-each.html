@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Food</h2>
+  <div id="app"></div>
+  <h2>Tasks</h2>
+  <div id="tasks"></div>
+  <script>
+    const products = [
+      {
+        title: 'Burguer', price: 121
+      },
+      {
+        title: 'Pizza', price: 20
+      }
+    ];
+    const tasks = [
+      { title: 'Clean desk', done: true },
+      { title: 'Feed doggies', done: true },
+      { title: 'Watering plants', done: false },
+      { title: 'Buy dinner', done: false }
+    ]
+    const app = document.getElementById('app');
+    products.forEach(item => {
+      app.innerHTML += `<li>${item.title} = $${item.price}</li>`
+    });
+
+    const task = document.getElementById('tasks');
+    tasks.forEach(({ title, done }) => {
+      task.innerHTML += `<li style='${done && 'text-decoration:line-through'}'>${title} <input type='checkbox' name=${title} ${done && 'checked'} /></li>`
+    })
+  </script>
+</body>
+
+</html>
