@@ -98,3 +98,20 @@ const ranges = numArr.reduce(
 console.log(numArr);
 
 console.log(ranges);
+
+
+function listGifts(letter) {
+  // ¡Tú puedes!
+  
+  return letter.split(' ').filter(item => !item.includes('_') && item.length).reduce((obj, item) => {
+    console.log(obj);
+    if(!obj[item]){
+      obj[item] = 1
+    } else {
+      obj[item] += 1
+    }
+    return obj
+  },{})
+ }
+
+ console.log(listGifts('bici coche balón _playstation  bici coche peluche'));
